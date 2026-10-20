@@ -1,0 +1,27 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color: #111111;
+  background: #f1f1f1;
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+}
+
+body {
+  font-feature-settings: "ss01", "cv11";
+}
+
+.tap-lg {
+  min-height: 56px;
+  min-width: 56px;
+}
+
+.tap-xl {
+  min-height: 72px;
+}
