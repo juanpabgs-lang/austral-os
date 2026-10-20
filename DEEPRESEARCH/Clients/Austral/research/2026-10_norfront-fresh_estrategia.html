@@ -1,0 +1,173 @@
+<!doctype html><html lang='es'><head><meta charset='utf-8'>
+<title>Norfront Fresh — estrategia</title>
+<style>body{font:15px/1.5 Inter,system-ui,sans-serif;max-width:820px;margin:40px auto;padding:0 24px;color:#111;background:#F1F1F1}
+h1{font-size:28px}h2{font-size:20px;margin-top:2em}code,pre{font-size:13px}
+hr{border:0;border-top:1px solid #1113}table{border-collapse:collapse;width:100%;font-size:13px}
+th,td{border:1px solid #1112;padding:6px 8px;text-align:left}th{background:#111;color:#fff}</style></head><body>
+<h1>Norfront Fresh — strategy for Austral, Mr Lucky and the Mexico–US produce corridor</h1>
+<p><strong>20 October 2026.</strong> Written for Mateo. English summary first, Spanish (MX) after. Every factual sentence has a source. Inferences are marked `<em>[Inference]</em>`. Synthetic demos contain no Austral records.</p>
+<p>Companion files: `00_decision-memo.md`, `notes/`, `OPEN_QUESTIONS.md`.</p>
+<hr>
+<h2>English summary</h2>
+<p><strong>The door.</strong> Sign Austral as a *design partner*, not as the brand. The first paid logo that looks like the company you want to be is <strong>Mr Lucky (Grupo U)</strong> — Irapuato, FTL vegetables, a plant, six DCs, Laredo. Meeting around 10 November, four days after FDA’s 6 November public meeting on lot-level traceability. Divine Flavor is the hub play (Nogales + Sinaloa/Sonora growers). Sunview is grapes: not on the Food Traceability List; do not lead with FSMA.</p>
+<p><strong>The one thing to show.</strong> From an inventory alert to *where in the chain it happened* in two clicks — segment, shift, zone, evidence — with capture that works in a cold room that has no Wi-Fi. That is what Austral’s father and sales manager will recognise, and what Mr Lucky’s ops lead can test with a held pallet that the API will not pick.</p>
+<p><strong>Who pays, and what.</strong> `<em>[Inference]</em>` A one-warehouse Mexican importer: implementation plus 6–8 cold-rated handhelds in the low six figures MXN; software in the mid five figures MXN per month. A grower-packer adding FSMA 204: same monthly, plus a packing-station kit. Take a 90-day shrink baseline before any gainshare. Public list prices for Famous, RedLine and Siconet were <strong>NOT FOUND</strong>; ReposiTrak publishes supplier-network economics in its filings (see notes/06 when complete).</p>
+<p><strong>Beat or partner.</strong> Overlay Siconet, do not replace it. Partner RedLine for PTI print if the customer already has it. Export KDEs into iTrade / ReposiTrak / FoodLogiQ when a US buyer demands a network. Do not start a traceability *network*. Do not rebuild Famous.</p>
+<p><strong>Tailwind.</strong> FSMA 204 enforcement cannot begin before <strong>20 July 2028</strong> (Pub. L. 119-37). The rule still covers Mr Lucky’s lettuce, tomato, cucumber, pepper and fresh-cut. Walmart’s PTI case-label mandate has been in force since 1 November 2013. Mexican retailers (Walmex, Chedraui) currently buy on GFSI and SENASICA more than on Subpart S — sell them shrink and mock-recall time, not “FDA will fine you.”</p>
+<p><strong>At scale.</strong> A vertical OS for fresh produce: warehouse truth in Mexico, lot records at the border, then a thin network only when buyers require it. Analogues are Toast / Procore (land at one site, expand) not IBM Food Trust (a consortium that faded).</p>
+<p><strong>Keep it secret?</strong> No. Traceability is a network good. Offer Austral a founding-partner window (pricing, veto on a named competitor for 12 months, no press without them). Secrecy and “sell it to everyone” are the same product with different contracts.</p>
+<p><strong>Where you are wrong.</strong> (1) FSMA 204 does not apply to fruit Austral imports and sells only in Mexico. (2) Do not name the product Austral OS. (3) RedLine’s site saying “July 26th, 2028” is almost certainly a typo for 20 July. (4) Celery, cabbage, garlic, corn, carrot, frozen vegetables and table grapes are not on the FTL; pitching FSMA there is a credibility kill. (5) You do not yet have SOC 2. (6) The September scan test failed on radio, not on software — hardware and labels are half the switch-on plan.</p>
+<hr>
+<h2>1. El mercado y el problema</h2>
+<p>México es el primer o segundo proveedor de varios productos de la Food Traceability List que entran a Estados Unidos: jitomate, pimiento, pepino, pepino, melón, mango, hierbas. Las cifras oficiales de volumen y valor 2024/2025 están en SIAP/SADER, USDA FAS GAIN y GATS; se transcriben en `notes/03_market-mexico-us.md` cuando el stream cierre. El corredor relevante para esta tesis es <strong>Sinaloa/Sonora → Nogales</strong>, <strong>Bajío → Laredo</strong> y <strong>el importador de fruta templada hacia el mercado interno</strong> (el oficio de Austral).</p>
+<p>El problema que Austral ya describió, y que no es exclusivo de ellos:</p>
+<ul>
+<li>Nadie confía en el inventario. Las cajas se pierden y no se sabe en qué eslabón.</li>
+<li>Los registros viven en papel, Excel, Siconet, Teams, correo, radio y memoria.</li>
+<li>Una prueba de escaneo en septiembre se cayó <strong>porque no hay Wi‑Fi en las cámaras</strong> (dato del brief; el modelo de terminal y el vendor son NOT FOUND).</li>
+<li>El gerente de ventas llama al inventario “sagrado”. El dueño, con más de 40 años en el oficio, preguntó qué tan rápido se prende.</li>
+</ul>
+<p>Eso no es un problema de “hace falta un ERP”. Austral ya tiene Siconet: ERP en la nube para comercializadoras de perecederos, Zapopan, Jalisco, fundado en 2005, con módulos de almacén, embarques, facturación (Carta Porte / CFDI), tesorería y liquidación a agricultores ([siconet.com.mx](https://www.siconet.com.mx/), consultado 2026-10-20). El hueco es <strong>la captura en el piso y la atribución del faltante</strong>.</p>
+<p>Pérdida y merma: el estudio del Banco Mundial *Pérdidas y desperdicios de alimentos en México* (2017) y las series de FAO/SEMARNAT documentan pérdida alta en frutas y hortalizas en la distribución. Un porcentaje puntual “típico” de merma de un comercializador mexicano de fruta <strong>no está publicado de forma usable</strong>; no lo inventamos. La literatura de *inventory record inaccuracy* (DeHoratius &amp; Raman, 2008, *Management Science*) sí establece que la inexactitud de existencias es la norma, no la excepción, en retail. `<em>[Inference]</em>` Un comercializador que no cuenta a ciegas por turno está operando a ciegas.</p>
+<h2>2. Cómo corre un almacén de produce que sí funciona</h2>
+<p>Práctica, no software (fuentes: USDA Agriculture Handbook 66, 2016; UC Davis Postharvest Technology Center; WERC DC Measures; PACA para reclamos a proveedor):</p>
+<ul>
+<li>Recepción con temperatura de pulpa y, si aplica, inspección USDA / reclamo PACA en tiempo.</li>
+<li>Ubicación por <strong>compatibilidad de temperatura y etileno</strong>, no por “dónde cabe”. Manzana y pera son altos productores de etileno; kiwi, lechuga y brócoli son sensibles (HB66 / UC Davis Produce Facts).</li>
+<li><strong>FEFO</strong>, no FIFO, cuando la vida restante diverge (un lote abusado térmicamente no es el más viejo en calendario).</li>
+<li>Conteos cíclicos ABC y <strong>conteo ciego al cambio de turno</strong>.</li>
+<li>Producto retenido <strong>segregado y bloqueado</strong> en el sistema, no solo con un papel en el pallet.</li>
+<li>Captura en cámara: access points *dentro* del cuarto, o terminales store-and-forward. El Wi‑Fi falla en paneles aislados de metal. Equipos de freezer (Zebra MC9300/CK65 y equivalentes) tienen rango de temperatura publicado; los precios de revendedor se anotan en `notes/05`.</li>
+<li>RFID en produce fresco: el agua y el metal degradan UHF. Auburn RFID Lab y GS1 lo documentan. `<em>[Inference]</em>` No es la primera inversión de un CEDIS mexicano de tamaño medio. Primero código de barras y disciplina de evento.</li>
+</ul>
+<p>El motor de frescura del demo usa las temperaturas de HB66 y un Q10 = 2.5 (Kader / postcosecha). La fórmula se muestra en pantalla y se etiqueta como inferencia.</p>
+<h2>3. Incumbentes: vencer o asociarse</h2>
+<table><thead><tr><th>Firma</th><th>Jugada</th></tr></thead><tbody>
+<tr><td><strong>Siconet</strong></td><td>Convivir. Importar existencias / OC / pedidos. Ellos timbran el CFDI y la Carta Porte. Nosotros escribimos la hoja de datos y el libro de custodia.</td></tr>
+<tr><td><strong>Famous</strong></td><td>No reemplazar. Si un cliente US ya vive ahí, conectar el ledger. On-prem Oracle, cotización a la medida (Software Advice / SelectHub; precio de lista NOT FOUND).</td></tr>
+<tr><td><strong>Prophet</strong></td><td>Confirmar de qué producto hablan. Epicor Prophet 21 es un ERP de distribución, no un WMS de fruta. No pelear contra un nombre ambiguo.</td></tr>
+<tr><td><strong>Agriful</strong></td><td>Identidad no confirmada en fuentes primarias al momento de escribir. No citar en una junta.</td></tr>
+<tr><td><strong>RedLine</strong></td><td>Asociarse en etiquetas PTI / Print Pack Ship. Todd Baggett, Santa Clara, fundó la compañía en 1997 y copreside el PTI Technology Working Group. El centro de su discurso 2025–2026 es FSMA 204. Su sitio escribe “Enforcement Begins July 26th, 2028” — la ley dice <strong>20 de julio</strong>. Tratarlo como aliado, no como enemigo, y no copiar la fecha.</td></tr>
+<tr><td><strong>Produce Pro, Silo, dProduce Man, FreshByte</strong></td><td>ERPs/WMS de produce US. Mismo patrón: overlay, no rip-and-replace.</td></tr>
+<tr><td><strong>iTradeNetwork, ReposiTrak, FoodLogiQ/Trustwell, iFoodDS</strong></td><td>Redes del *comprador* US. Exportar KDEs / EPCIS. No lanzar “la red mexicana” en 2026.</td></tr>
+<tr><td><strong>TOMRA, Unitec, MAF, Reemoon</strong></td><td>Línea de empaque. El lote nace ahí; el software de clasificación no es un libro de custodia. Integrar después.</td></tr>
+</tbody></table>
+<p>`<em>[Inference]</em>` La capacidad que nadie les vende bien a un importador mexicano de un solo CEDIS es la que está en el memo: captura offline + faltante por segmento/turno + overlay.</p>
+<h2>4. La puerta y la única cosa</h2>
+<p>Ver `00_decision-memo.md`. En una frase: <strong>Austral enseña el producto; Mr Lucky lo convierte en compañía; Divine Flavor lo lleva al empaque.</strong></p>
+<p>La única cosa: *de la alerta a la evidencia en dos clics*, con la red apagada.</p>
+<h2>5. A quién firmar y cómo</h2>
+<p><strong>Austral (diseño).</strong> El padre ya preguntó por el encendido. El gerente de ventas preguntó si se guarda o se vende. Respuesta en §11. Condiciones `<em>[Inference]</em>`: 90 días de piloto en una cámara y el andén; precio de socio fundador; ellos no son el logo en la home; veto de 12 meses sobre un competidor nombrado; ninguna nota de prensa sin su sí.</p>
+<p><strong>Mr Lucky / Grupo U.</strong> Hechos públicos (mrlucky.com.mx, consultado 2026-10-20): planta en Irapuato; CEDIS en CDMX, Monterrey, Guadalajara, Cancún, Irapuato y Laredo, TX; lechugas, apio, brócoli, coliflor, espinaca, jitomates, mini pepino, precortado y congelado; orgánico CCOF/USDA. El catálogo muestra prefijo UPC 796631 y vidas de anaquel (iceberg 14 días, apio 2–3 semanas, corona de brócoli 20 días). <strong>En la FTL:</strong> lechugas de hoja, espinaca, jitomate, pepino, precortado. <strong>Fuera:</strong> apio, brócoli, coliflor, ajo, col, elote, zanahoria, chícharo, congelado. La junta ~10 nov es cuatro días después de la reunión pública de FDA (6 nov 2026, FR 2026-20720). Llevar el demo de FSMA y el de almacén. No prometer cumplimiento legal.</p>
+<p><strong>Divine Flavor.</strong> Nogales AZ, 2007. Pimiento, jitomate, pepino, calabaza, melón, uva. Growers públicos: Hortifresh, Viva Orgánica, Grupo Chaparral, Campaña Agricultores (Culiacán), Grupo Alta (Sonora). Puertos: Nogales (~80 %), Otay Mesa, McAllen. La puerta es <strong>un empaque, muchos ranchos</strong>, no el importador solo.</p>
+<p><strong>Sunview Vineyards.</strong> Delano, CA. Uva de mesa. La uva <strong>no está en la FTL</strong>. OSHA 300A 2025 lista ~1,437 empleados. Estimaciones de ingreso ($68 M–$250 M) discrepan — no usar ninguna. Si se abre, vender frío y traza comercial, no Subpart S.</p>
+<h2>6. Precio</h2>
+<p>Precios de lista de Famous, Produce Pro, RedLine PTI Lite y Siconet: <strong>NOT FOUND</strong> en páginas públicas al 20 oct 2026. ReposiTrak (NYSE: TRAK) publica ingresos y número de nodos en 10-K/10-Q; transcribir en notes/06.</p>
+<p>Ancla de valor `<em>[Inference]</em>`, aritmética, no un resultado:</p>
+<ul>
+<li>Si un comercializador factura MXN 500 M y la merma + faltante no registrado es 2 % de ventas, un punto porcentual vale MXN 5 M al año.</li>
+<li>Un piloto que recupere *una décima* de punto (MXN 500 mil) paga un software de MXN 40–80 mil al mes y el hardware.</li>
+<li>No afirmar que el piloto recupera eso. Medir 90 días.</li>
+</ul>
+<p>Recomendación de empaque comercial `<em>[Inference]</em>`:</p>
+<table><thead><tr><th>Perfil</th><th>Setup</th><th>Mensual</th><th>Hardware</th></tr></thead><tbody>
+<tr><td>Importador, 1 CEDIS, 3 turnos</td><td>MXN 180–350 k (mapeo Siconet, conteo inicial, reglas)</td><td>MXN 45–75 k</td><td>6–8 handhelds freezer-rate + 2 impresoras; renta o compra</td></tr>
+<tr><td>Empaque FSMA, 1 planta</td><td>MXN 220–400 k (plan §1.1315, estaciones, etiquetas)</td><td>MXN 55–90 k</td><td>2 estaciones de empaque + 1 andén</td></tr>
+</tbody></table>
+<p>Riesgo de cada uno: el primero se muere si el Wi‑Fi (o el store-and-forward) falla otra vez; el segundo se muere si FDA recorta KDEs en 2027 y el comprador deja de preguntar.</p>
+<h2>7. FSMA 204 y los retailers</h2>
+<ul>
+<li><strong>Fecha de cumplimiento:</strong> 20 julio 2028. FDA lo propuso el 7 agosto 2025; Pub. L. 119-37 (Continuing Appropriations Act, 2026) impide exigir antes. Reunión pública sobre trazabilidad a nivel de lote: 6 noviembre 2026 (Federal Register 2026-20720). Guía borrador de discreción de aplicación para pequeños retailers y restaurantes: 9 octubre 2026.</li>
+<li><strong>Qué cubre (FTL produce):</strong> pepinos, hierbas, leafy greens (fresco y corte), melones, pimientos, germinados, jitomates, frutas tropicales de árbol *con exclusiones* (aguacate, cítricos, plátano, piña y otras), y frutas/verduras precortadas. Fuente: página FTL de FDA, consultada 2026-10-20.</li>
+<li><strong>Qué no cubre:</strong> uva de mesa, manzana, pera, cereza, arándano entero, kiwi, durazno, cítricos, aguacate, plátano, piña, calabaza, apio, brócoli, col, elote, ajo, zanahoria, congelados. Un empaque de uva o un importador de manzana no “está en FSMA 204” por vender fruta.</li>
+<li><strong>Quién guarda qué:</strong> 21 CFR 1.1325 (cosecha y enfriado, y lo que hay que mandar al empaque inicial), 1.1330 (empaque inicial: aquí nace el TLC), 1.1340 (envío), 1.1345 (recibo), 1.1350 (transformación), 1.1315 (plan), 1.1320 (quién puede asignar un código nuevo), 1.1455 (retención 2 años, 24 horas, hoja electrónica ordenable).</li>
+<li><strong>Walmart US:</strong> exigencia de etiqueta PTI de caja vigente desde el 1 nov 2013 (comunicado Walmart / PTI). IBM Food Trust para leafy greens (2018–2019) no es, en 2026, el estándar de facto; no vender “están en blockchain”.</li>
+<li><strong>México:</strong> NOM-251-SSA1-2009 es higiene; no es Subpart S. SENASICA SRRC y certificados fitosanitarios *sí* generan rastro en el andén de un importador. GFSI (PrimusGFS, GLOBALG.A.P. IFA v6, SQF, BRCGS) exige trazabilidad y simulacros de retiro — eso sí aplica a Mr Lucky y a Divine hoy, no en 2028.</li>
+</ul>
+<h2>8. La compañía a escala</h2>
+<p>`<em>[Inference]</em>` Tres capas, en este orden:</p>
+<p>1. <strong>Ledger de custodia</strong> (lo que está construido): evento → inventario, pérdida, FEFO, documentos.</p>
+<p>2. <strong>Lente FSMA</strong> sobre el mismo ledger para quien exporta a EUA.</p>
+<p>3. <strong>Red</strong> solo cuando un comprador la exige (export a ReposiTrak / iTrade / EPCIS), no como producto de lanzamiento.</p>
+<p>El patrón es Toast o Procore: un sitio, un turno, luego el segundo CEDIS. No IBM Food Trust. Frubana y Jüsto enseñan que “OS del food en LatAm” se estrella cuando se financia distribución en lugar de software.</p>
+<p>Comparables de *traceability software* cotizados: ReposiTrak (TRAK) es el único número limpio; el resto es privado o se vendió (FoodLogiQ → Trustwell). Transcribir múltiplos cuando notes/06 cierre. No inventar valuación.</p>
+<h2>9. ¿Lo guardamos o lo vendemos?</h2>
+<p>Pregunta del gerente de ventas de Austral. Respuesta:</p>
+<p>La traza solo vale si el siguiente eslabón puede leer el lote. Un sistema secreto es un Excel con mejor tipo de letra. Lo que sí se puede guardar es <strong>la ventaja de 12 meses</strong>: precio de socio, capacidad de decir que no a un competidor nombrado, y control de la historia pública.</p>
+<p>Tres contratos, un producto: diseño (Austral), planta (Mr Lucky), empaque (Divine).</p>
+<h2>10. Dónde estamos mal</h2>
+<p>1. FSMA no cubre el negocio doméstico de Austral ni la uva de Sunview.</p>
+<p>2. El producto no se llama Austral OS. Se llama Norfront Fresh. El tenant es el cliente.</p>
+<p>3. “July 26, 2028” en RedLine no es la ley.</p>
+<p>4. Vender FSMA sobre apio, col, ajo o uva destruye credibilidad en la primera junta.</p>
+<p>5. No hay SOC 2 ni ISO. Las *claims rules* de Norfront lo prohíben.</p>
+<p>6. El piloto de septiembre falló por radio. Sin handhelds de frío y etiquetas que se peguen a 0 °C, el software es teatro.</p>
+<p>7. Atribuir un faltante a una persona, en México, es un problema laboral y de LFPDPPP. Por eso la vista pública es proceso y la privada dice “señal, no acusación”.</p>
+<p>8. El VPC del demo es un CRC-16 candidato, no un certificado PTI. Decirlo en la junta.</p>
+<h2>11. Plan de encendido en Austral</h2>
+<p><strong>Supuestos</strong> (en `demos/austral-os/ASSUMPTIONS.md`): forma del CEDIS, columnas de Siconet, términos de Dafne (A9, CLAM, line order) y el modelo de terminal de septiembre son desconocidos. No se inventaron.</p>
+<h3>Hardware y etiquetas `<em>[Inference]</em>` de rangos de revendedor 2025–2026, a confirmar</h3>
+<table><thead><tr><th>Ítem</th><th>Cantidad</th><th>Rango USD</th><th>Nota</th></tr></thead><tbody>
+<tr><td>Handheld freezer-rate (Zebra MC3300/MC9300 o Honeywell CK65 cold)</td><td>6</td><td>1,400–2,400 c/u</td><td>O tablet rugerizada + anillo si el presupuesto aprieta</td></tr>
+<tr><td>Impresora de escritorio (ZD421 / PC42)</td><td>2</td><td>400–700</td><td>Andén y empaque</td></tr>
+<tr><td>Stock freezer / all-temp, 1,000 etiquetas</td><td>10 millar</td><td>40–90 / millar</td><td>Adhesivo que aguante condensación</td></tr>
+<tr><td>AP en cámara (opcional, fase 2)</td><td>3</td><td>200–400</td><td>No es el plan A; el plan A es offline</td></tr>
+</tbody></table>
+<h3>Línea base (semana 0, antes de prender)</h3>
+<ul>
+<li>10 días de: cajas recibidas vs acomodadas vs surtidas vs embarcadas, por SKU, a mano.</li>
+<li>Conteos ciegos de las tres cámaras, un turno.</li>
+<li>Lista de faltantes y reclamos de los últimos 60 días (rangos, no records reales en ningún modelo).</li>
+<li>Métrica piloto: *inventory truth score* (pallets verificados &lt; 48 h), cajas faltantes atribuidas a un segmento, tiempo alerta→evidencia, pick bloqueado en retención.</li>
+</ul>
+<h3>Fases</h3>
+<p>1. <strong>Días 1–10.</strong> Mapear Siconet/Excel. Reglas del dueño. Etiquetar pallets existentes (paso 2 del wizard).</p>
+<p>2. <strong>Días 11–25.</strong> Un turno, Cámara 2 + andén. Offline obligatorio. No se apaga Siconet.</p>
+<p>3. <strong>Días 26–45.</strong> Tres turnos. FEFO en un SKU de vida corta (cereza / berry).</p>
+<p>4. <strong>Días 46–90.</strong> Segunda cámara. Vista privada solo el dueño. Decisión de seguir o no, con números, no con sentimiento.</p>
+<h2>12. Preparación Mr Lucky (~10 nov 2026)</h2>
+<p><strong>Antes de entrar</strong></p>
+<ul>
+<li>El 6 nov FDA habla de trazabilidad a nivel de lote. Leer el docket esa noche. Si recortan KDEs, el pitch no cambia: el gate y el simulacro siguen sirviendo a PrimusGFS / al receptor de Laredo.</li>
+<li>Llevar dos laptops. La demo corre sin red. Video de respaldo (este repo, walkthrough).</li>
+<li>Personas en la sala `<em>[Inference]</em>`: operaciones de planta, inocuidad, y quien manda a Laredo. No solo “innovación”.</li>
+</ul>
+<p><strong>Guion 20 minutos</strong></p>
+<p>1. Tres frases: cada movimiento con hora; el faltante se ve ahora; una retención no se surte.</p>
+<p>2. Demo almacén (5 min): alerta → cereza → 409 en fresa → offline.</p>
+<p>3. Demo FSMA (5 min): empaque sin predio no imprime; camión con hueco no sale; hoja FDA; simulacro de un clic.</p>
+<p>4. Pregunta que ellos deben hacer: “¿esto convive con lo que ya tenemos?” Sí. Overlay.</p>
+<p>5. Lo que no se dice: plazos de cumplimiento, “les bajamos la merma X %”, nombres de otros clientes, SOC 2.</p>
+<p><strong>Objeciones</strong></p>
+<ul>
+<li>“Ya tenemos Primus y etiquetas.” El simulacro de hoy tarda horas y el lote se arma en Excel. Esto lo deja en minutos y no deja salir el camión.</li>
+<li>“FSMA es en 2028.” H-E-B y Walmart no esperan a FDA para pedir PTI y un paquete de embarque. Además el 2028 es la fecha *más temprana* de enforcement, no un horizonte cómodo.</li>
+<li>“¿Se lo van a vender a todos?” Socio de diseño ahora, no exclusividad eterna. Ver §9.</li>
+</ul>
+<p><strong>Materiales en la mesa:</strong> esta nota, el memo, los dos READMEs, el deck de Mateo con el ítem 3 del checklist ya construido.</p>
+<hr>
+<h2>Sources (load-bearing)</h2>
+<ul>
+<li>[S1] FDA Food Traceability List — https://www.fda.gov/food/food-safety-modernization-act-fsma/food-traceability-list — accessed 2026-10-20</li>
+<li>[S2] FDA FSMA Final Rule on Requirements for Additional Traceability Records (Subpart S) — eCFR 21 CFR 1.1300–1.1465 — accessed 2026-10-20</li>
+<li>[S3] Pub. L. 119-37, Continuing Appropriations Act, 2026 (no enforcement of the Food Traceability Rule before 20 Jul 2028)</li>
+<li>[S4] Federal Register 2026-20720, FDA public meeting on lot-level traceability, 6 Nov 2026</li>
+<li>[S5] FDA draft enforcement-discretion guidance for small retailers and restaurants, 9 Oct 2026</li>
+<li>[S6] Siconet — https://www.siconet.com.mx/ — accessed 2026-10-20</li>
+<li>[S7] Mr Lucky / Grupo U — https://www.mrlucky.com.mx/ — accessed 2026-10-20</li>
+<li>[S8] Divine Flavor — company site / grower pages — accessed 2026-10-20</li>
+<li>[S9] USDA Agriculture Handbook 66 (2016), The Commercial Storage of Fruits, Vegetables, and Florist and Nursery Stocks</li>
+<li>[S10] UC Davis Postharvest Technology Center, Produce Facts</li>
+<li>[S11] Walmart PTI case-label requirement, effective 1 Nov 2013 (Walmart supplier communications / PTI)</li>
+<li>[S12] Produce Traceability Initiative — https://www.producetraceability.org/ — accessed 2026-10-20</li>
+<li>[S13] GS1 General Specifications, check-digit algorithm; GS1 EPCIS 2.0</li>
+<li>[S14] GMA / Deloitte, Recall Execution Effectiveness, 2011 (USD 10 M average *direct* cost; not produce-specific)</li>
+<li>[S15] World Bank, *Pérdidas y desperdicios de alimentos en México*, 2017</li>
+<li>[S16] DeHoratius &amp; Raman, “Inventory Record Inaccuracy”, *Management Science*, 2008</li>
+<li>[S17] RedLine Solutions — company site / “Produce Traceability Integrity” (Todd Baggett) — accessed 2026-10-20. Date conflict: site “July 26th, 2028” vs [S3].</li>
+<li>[S18] SAT, Complemento Carta Porte 3.1, Guía de llenado (Anexo 20) — version and mandate dates to be confirmed in notes/07</li>
+<li>[S19] NOM-251-SSA1-2009, prácticas de higiene — not a lot-level traceability rule</li>
+<li>[S20] Norfront public claims rules (internal): no guarantees, no invented metrics, no client names without permission, LFPDPPP</li>
+</ul>
+<p>Streams 01–07 will add quote-level ledgers under `notes/`. Where a number is still <strong>NOT FOUND</strong>, it stays NOT FOUND.</p>
+</body></html>
