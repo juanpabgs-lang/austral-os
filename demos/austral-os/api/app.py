@@ -106,7 +106,12 @@ def cockpit():
     missing = [g for g in gaps if g["kind"] in ("faltante", "faltante_proveedor", "merma_no_registrada", "reempaque")]
     missing_boxes = sum(g["qty"] for g in missing)
     missing_value = sum(g.get("value_mxn") or 0 for g in missing)
-    at_risk = [p for p in inv if p["freshness"]["band"] in ("critico", "riesgo")]
+    at_risk = [
+        p
+        for p in inv
+        if p["freshness"]["band"] in ("critico", "riesgo", "vigilar")
+        or (p.get("zone_id") == "Z-CAM3" and p["sku_id"] in ("SKU-AGU-HASS", "SKU-MAN-ATA"))
+    ]
     var72 = sum(p["qty_boxes"] * p["box_value_mxn"] for p in at_risk)
     counted = [p for p in inv if p.get("last_count_at")]
     # Truth score: 100 minus penalties for unverified, missing, holds unexplained.
@@ -121,6 +126,7 @@ def cockpit():
         "truth_score": truth,
         "truth_note": f"{len(counted)} pallets con conteo · {len(stale)} sin verificar >48 h",
         "value_at_risk_72h_mxn": var72,
+        "value_at_risk_note": "Bandas crítico/riesgo/vigilar más lotes de Cámara 3 expuestos el 19 oct.",
         "missing_boxes": missing_boxes,
         "missing_value_mxn": missing_value,
         "missing": missing[:8],
