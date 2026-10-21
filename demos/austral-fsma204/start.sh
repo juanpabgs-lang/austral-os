@@ -7,7 +7,7 @@ if [ ! -d .venv ]; then
   .venv/bin/pip install -r requirements.txt
 fi
 .venv/bin/python -c "from seed import seed; seed('fsma.db')"
-.venv/bin/uvicorn app:app --host 127.0.0.1 --port 8017 &
+.venv/bin/uvicorn app:app --host 0.0.0.0 --port 8017 &
 API_PID=$!
 trap 'kill $API_PID 2>/dev/null || true' EXIT
 cd "$ROOT/web"
