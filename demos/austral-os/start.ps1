@@ -5,7 +5,7 @@ if (-not (Test-Path .venv)) {
   .\.venv\Scripts\pip install -r requirements.txt
 }
 .\.venv\Scripts\python -c "from seed import seed; seed()"
-Start-Process -NoNewWindow .\.venv\Scripts\uvicorn -ArgumentList "app:app","--host","127.0.0.1","--port","8016"
+Start-Process -NoNewWindow .\.venv\Scripts\uvicorn -ArgumentList "app:app","--host","0.0.0.0","--port","8016"
 Set-Location "$Root\web"
 if (-not (Test-Path node_modules)) { npm install }
 npm run dev
