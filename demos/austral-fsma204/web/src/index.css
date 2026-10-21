@@ -1,0 +1,5 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+body { font-feature-settings: "ss01"; }
+.tap-xl { min-height: 72px; }
