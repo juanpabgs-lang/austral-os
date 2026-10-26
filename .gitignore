@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 .venv/
 __pycache__/
 *.pyc
@@ -11,3 +12,7 @@ dev-dist/
 .ruff_cache/
 playwright-report/
 test-results/
+=======
+__pycache__/
+*.pyc
+>>>>>>> cursor/austral-fsma204-demo-0f50
