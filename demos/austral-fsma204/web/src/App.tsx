@@ -52,7 +52,7 @@ export function App() {
             <button className="rounded-full border border-black/15 px-3 py-1 text-xs" onClick={() => { setPresent(true); if (steps[0]) nav(steps[0].route); }}>
               {t.present}
             </button>
-            <button className="rounded-full bg-ink px-3 py-1 text-xs text-white" onClick={async () => { await fetch("/api/reset", { method: "POST" }); location.href = "/"; }}>
+            <button className="rounded-full bg-ink px-3 py-1 text-xs text-white" onClick={async () => { await fetch("/api/reset", { method: "POST" }); location.assign(import.meta.env.BASE_URL); }}>
               {t.reset}
             </button>
           </div>
