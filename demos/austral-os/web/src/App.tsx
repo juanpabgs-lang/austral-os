@@ -78,7 +78,7 @@ export function App() {
 
   async function resetDemo() {
     await api("/api/reset", { method: "POST" });
-    window.location.href = "/";
+    window.location.assign(import.meta.env.BASE_URL);
   }
 
   function goStep(i: number) {

@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useSearchParams } from "react-router-dom";
+import { Link, useSearchParams } from "react-router-dom";
 import { api } from "../api";
 
 type Gap = { segment: string; kind: string; qty: number; shift?: string; summary: string; lot_id: string; value_mxn?: number; sku_name?: string };
@@ -57,7 +57,7 @@ export function Losses({ privateView }: { privateView: boolean }) {
         <ul className="space-y-2">
           {gaps.map((g, i) => (
             <li key={i}>
-              <a href={`/perdidas?lot=${g.lot_id}`} className="block rounded-2xl border border-black/10 bg-white p-3 hover:border-ink">
+              <Link to={`/perdidas?lot=${g.lot_id}`} className="block rounded-2xl border border-black/10 bg-white p-3 hover:border-ink">
                 <div className="text-[11px] uppercase tracking-wider text-black/45">
                   {g.kind} · {g.segment} · {g.shift}
                 </div>
@@ -65,7 +65,7 @@ export function Losses({ privateView }: { privateView: boolean }) {
                 <div className="text-xs text-black/50">
                   {g.sku_name} · {g.qty} cajas
                 </div>
-              </a>
+              </Link>
             </li>
           ))}
         </ul>

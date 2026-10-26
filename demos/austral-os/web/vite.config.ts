@@ -3,9 +3,11 @@ import react from "@vitejs/plugin-react";
 import { VitePWA } from "vite-plugin-pwa";
 
 export default defineConfig({
+  base: process.env.VITE_BASE || "/",
   plugins: [
     react(),
     VitePWA({
+      disable: process.env.VITE_STATIC === "1",
       registerType: "autoUpdate",
       manifest: {
         name: "Norfront Fresh · Austral",

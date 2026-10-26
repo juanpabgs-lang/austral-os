@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { api } from "../api";
+import { api, downloadHref } from "../api";
 
 export function Paperwork() {
   const [docs, setDocs] = useState<any[]>([]);
@@ -13,7 +13,7 @@ export function Paperwork() {
           <h1 className="text-3xl font-semibold tracking-tight">El papeleo se escribe solo</h1>
           <p className="text-sm text-black/55">Recepción, reclamo, remisión, Carta Porte, POD. Siconet timbra el CFDI; esto arma la hoja.</p>
         </div>
-        <a className="rounded-full bg-ink px-3 py-2 text-xs text-white" href="/api/documents/siconet.csv">
+        <a className="rounded-full bg-ink px-3 py-2 text-xs text-white" href={downloadHref("/api/documents/siconet.csv", "files/siconet.csv")}>
           Exportar a Siconet
         </a>
       </div>

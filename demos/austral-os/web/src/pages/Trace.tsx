@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useSearchParams } from "react-router-dom";
-import { api } from "../api";
+import { api, downloadHref } from "../api";
 
 type Lot = { id: string; lot_code: string; sku_name: string; variety: string };
 
@@ -64,10 +64,10 @@ export function Trace() {
               </div>
             </div>
             <div className="mt-4 flex gap-2">
-              <a className="rounded-full bg-ink px-3 py-1.5 text-xs text-white" href={`/api/fda-sheet/${lotId}`}>
+              <a className="rounded-full bg-ink px-3 py-1.5 text-xs text-white" href={downloadHref(`/api/fda-sheet/${lotId}`, `files/fda/${lotId}.xlsx`)}>
                 Hoja FDA
               </a>
-              <a className="rounded-full border border-black/15 px-3 py-1.5 text-xs" href={`/api/epcis/${lotId}`} target="_blank">
+              <a className="rounded-full border border-black/15 px-3 py-1.5 text-xs" href={downloadHref(`/api/epcis/${lotId}`, `files/epcis/${lotId}.json`)} target="_blank">
                 EPCIS 2.0
               </a>
             </div>

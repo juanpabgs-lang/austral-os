@@ -1,3 +1,5 @@
+import { staticResponse } from "./staticDemo";
+
 export const ROLE_KEY = "nf-role";
 
 export function currentRole(): string {
@@ -12,7 +14,10 @@ export async function api<T>(path: string, init: RequestInit = {}): Promise<T> {
   const headers = new Headers(init.headers);
   headers.set("X-Role", currentRole());
   if (init.body && !headers.has("Content-Type")) headers.set("Content-Type", "application/json");
-  const res = await fetch(path, { ...init, headers });
+  const res =
+    import.meta.env.VITE_STATIC === "1"
+      ? await staticResponse(path, { ...init, headers })
+      : await fetch(path, { ...init, headers });
   if (!res.ok) {
     let detail: unknown = res.statusText;
     try {
@@ -28,6 +33,11 @@ export async function api<T>(path: string, init: RequestInit = {}): Promise<T> {
   const ct = res.headers.get("content-type") || "";
   if (ct.includes("application/json")) return res.json() as Promise<T>;
   return res as unknown as T;
+}
+
+export function downloadHref(livePath: string, filePath: string) {
+  if (import.meta.env.VITE_STATIC === "1") return `${import.meta.env.BASE_URL}${filePath}`;
+  return livePath;
 }
 
 export const mxn = (n: number) =>
