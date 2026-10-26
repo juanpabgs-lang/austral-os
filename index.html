@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Norfront Fresh</title>
+  <style>
+    :root { color-scheme: light; }
+    body { margin: 0; background: #F1F1F1; color: #111; font: 16px/1.45 Inter, system-ui, sans-serif; }
+    main { max-width: 820px; margin: 0 auto; padding: 48px 20px 80px; }
+    h1 { font-size: 40px; letter-spacing: -0.03em; margin: 0 0 8px; }
+    p { color: #333; }
+    .grid { display: grid; gap: 16px; margin-top: 28px; }
+    @media (min-width: 720px) { .grid { grid-template-columns: 1fr 1fr; } }
+    a.card { display: block; background: white; border: 1px solid rgba(0,0,0,.1); border-radius: 18px; padding: 20px; text-decoration: none; color: inherit; }
+    a.card:hover { border-color: #111; }
+    .k { font-size: 12px; letter-spacing: .08em; text-transform: uppercase; color: #666; }
+    h2 { margin: 8px 0; font-size: 22px; }
+    .go { display: inline-block; margin-top: 12px; background: #111; color: #00FE99; border-radius: 999px; padding: 6px 12px; font-size: 13px; }
+  </style>
+</head>
+<body>
+  <main>
+    <div class="k">Norfront Fresh · datos sintéticos</div>
+    <h1>Demos para abrir en el navegador</h1>
+    <p>Dos recorridos de cinco minutos. No hace falta instalar nada.</p>
+    <div class="grid">
+      <a class="card" href="os/">
+        <div class="k">Almacén</div>
+        <h2>Austral OS</h2>
+        <p>Cabina del dueño, faltantes, mapa, qué sale primero y traza por lote.</p>
+        <span class="go">Abrir almacén</span>
+      </a>
+      <a class="card" href="fsma/">
+        <div class="k">Empaque</div>
+        <h2>FSMA 204</h2>
+        <p>Predio en la etiqueta, andén que no suelta el camión, hoja FDA y retiro.</p>
+        <span class="go">Abrir empaque</span>
+      </a>
+    </div>
+  </main>
+</body>
+</html>
